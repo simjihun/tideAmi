@@ -1,4 +1,4 @@
-package com.tide.ami.controller;
+package com.tide.ami.payload;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
