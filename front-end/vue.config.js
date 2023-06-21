@@ -17,6 +17,7 @@ module.exports = defineConfig({
         },
       },
     },
+    // overlay: false,
   },
   configureWebpack: {
     resolve: {
