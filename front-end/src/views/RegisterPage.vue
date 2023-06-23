@@ -6,7 +6,7 @@
           <img class="logo" src="../assets/logo.png" />
           <div class="tagline">Open source task management tool</div>
         </div>
-        <!-- <form @submit.prevent="submitForm">
+        <form @submit.prevent="submitForm">
           <div v-show="errorMessage" class="alert alert-danger failed">
             <template v-if="v$.form.$errors && v$.form.$errors.length">
               {{ errorMessage }}
@@ -91,7 +91,7 @@
           <p class="text-center text-muted">
             Already have an account? <a href="/login">Sign in</a>
           </p>
-        </form> -->
+        </form>
       </div>
     </div>
     <footer class="footer">

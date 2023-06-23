@@ -4,7 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.tide.ami.domain.RegistrationCommand;
+import com.tide.ami.commands.RegistrationCommand;
 
 
 public class RegistrationPayload {

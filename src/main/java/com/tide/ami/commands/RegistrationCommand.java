@@ -1,4 +1,4 @@
-package com.tide.ami.domain;
+package com.tide.ami.commands;
 
 import org.springframework.util.Assert;
 
@@ -30,6 +30,7 @@ public class RegistrationCommand {
     return this.password;
   }
 
+  //TEST용
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -40,6 +41,7 @@ public class RegistrationCommand {
     return password != null ? password.equals(that.password) : that.password == null;
   }
 
+  //TEST용
   @Override
   public int hashCode() {
     int result = username != null ? username.hashCode() : 0;

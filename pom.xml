@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.4.RELEASE</version>
+		<version>2.1.12.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.tide</groupId>
@@ -41,7 +41,7 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>3.0.2</version>
 		</dependency>
-		<!-- <dependency> <groupId>org.thymeleaf.extras</groupId> <artifactId>thymeleaf-extras-springsecurity6</artifactId> 
+		<!-- <dependency> <groupId>org.thymeleaf.extras</groupId> <artifactId>thymeleaf-extras-springsecurity6</artifactId>
 			</dependency> -->
 
 		<dependency>
@@ -71,6 +71,11 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -106,7 +111,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.6.0</version>
+				<!-- <version>1.6.0</version> -->
 				<executions>
 					<execution>
 						<id>front-end install</id>
@@ -132,20 +137,6 @@
 							<arguments>
 								<argument>run</argument>
 								<argument>build</argument>
-							</arguments>
-						</configuration>
-					</execution>
-					<execution>
-						<id>front-end e2e test</id>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<phase>integration-test</phase>
-						<configuration>
-							<executable>npm</executable>
-							<arguments>
-								<argument>run</argument>
-								<argument>test:e2e</argument>
 							</arguments>
 						</configuration>
 					</execution>
