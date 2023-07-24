@@ -5,11 +5,15 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Service;
 
 import com.tide.ami.dto.BoardDto;
 import com.tide.ami.entity.BoardEntity;
+import com.tide.ami.model.Header;
+import com.tide.ami.model.Pagination;
 import com.tide.ami.repository.BoardRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -24,24 +28,31 @@ public class BoardService {
     /**
      * 게시글 목록 가져오기
      */
-    public List<BoardDto> getBoardList() {
-        List<BoardEntity> boardEntities = boardRepository.findAll();
-        List<BoardDto> dtos = new ArrayList<>();
+	public Header<List<BoardDto>> getBoardList(Pageable pageable) {
+	    List<BoardDto> dtos = new ArrayList<>();
 
-        for (BoardEntity entity : boardEntities) {
-            BoardDto dto = BoardDto.builder()
-                    .idx(entity.getIdx())
-                    .author(entity.getAuthor())
-                    .title(entity.getTitle())
-                    .contents(entity.getContents())
-                    .createdAt(entity.getCreatedAt().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss")))
-                    .build();
+	    Page<BoardEntity> boardEntities = boardRepository.findAllByOrderByIdxDesc(pageable);
+	    for (BoardEntity entity : boardEntities) {
+	        BoardDto dto = BoardDto.builder()
+	                .idx(entity.getIdx())
+	                .author(entity.getAuthor())
+	                .title(entity.getTitle())
+	                .contents(entity.getContents())
+	                .createdAt(entity.getCreatedAt().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss")))
+	                .build();
 
-            dtos.add(dto);
-        }
+	        dtos.add(dto);
+	    }
 
-        return dtos;
-    }
+	    Pagination pagination = new Pagination(
+	            (int) boardEntities.getTotalElements()
+	            , pageable.getPageNumber() + 1
+	            , pageable.getPageSize()
+	            , 10
+	    );
+
+	    return Header.OK(dtos, pagination);
+	}
 
     /**
      * 게시글 가져오기

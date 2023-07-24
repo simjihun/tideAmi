@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,11 +13,11 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tide.ami.dto.BoardDto;
 import com.tide.ami.entity.BoardEntity;
+import com.tide.ami.model.Header;
 import com.tide.ami.service.BoardService;
 
 import lombok.RequiredArgsConstructor;
@@ -32,7 +34,9 @@ public class BoardController {
 	private final BoardService boardService;
 
     @GetMapping("/board/list")
-    public List<BoardDto> boardList() { return boardService.getBoardList(); }
+    public Header<List<BoardDto>> boardList(@PageableDefault(sort = {"idx"}) Pageable pageable){
+        return boardService.getBoardList(pageable);
+    }
 
     @GetMapping("/board/{id}")
     public BoardDto getBoard(@PathVariable Long id) {
