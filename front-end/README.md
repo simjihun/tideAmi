@@ -1,24 +1,29 @@
-# front-end
+This template should help get you started developing with Vue 3 in Vite.
 
-## Project setup
-```
-yarn install
-```
+## Customize configuration
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-### Compiles and minifies for production
-```
-yarn build
+## Project Setup
+
+```sh
+npm install
 ```
 
-### Lints and fixes files
-```
-yarn lint
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
