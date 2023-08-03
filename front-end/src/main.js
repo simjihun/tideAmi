@@ -108,27 +108,15 @@ import axios from 'axios';
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 import VueMoment from 'moment';
-
-// axios.defaults.baseURL = '/api';
-// axios.defaults.headers.common.Accept = 'application/json';
-// axios.defaults.baseURL = 'http://localhost:9000/';
-// axios.interceptors.response.use(
-//     (response) => response,
-//     (error) => {
-//         return Promise.reject(error);
-//     }
-// );
-
-// AxiosInst.interceptors.request.use((config) => {
-//     config.headers.authorization = 'token';
-//     config.headers['Access-Control-Allow-Origin'] = '*'; // CORS 설정(모든 리소스 허용)
-//     return config;
-// });
-
-// export default AxiosInst;
+import '@/fonts/NotoSansKR.css';
+//import Vuetify from 'vuetify';
+import Vue3EasyDataTable from 'vue3-easy-data-table';
+import 'vue3-easy-data-table/dist/style.css';
+// import TinyTabs from 'vue-tiny-tabs';
 
 const app = createApp(App);
 
+//app.use(Vuetify);
 app.use(router);
 app.use(PrimeVue, { ripple: true });
 app.use(ToastService);
@@ -145,6 +133,7 @@ app.directive('badge', BadgeDirective);
 app.directive('ripple', Ripple);
 app.directive('styleclass', StyleClass);
 
+app.component('EasyDataTable', Vue3EasyDataTable);
 app.component('CodeHighlight', CodeHighlight);
 app.component('BlockViewer', BlockViewer);
 

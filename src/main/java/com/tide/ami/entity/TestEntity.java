@@ -1,6 +1,7 @@
 package com.tide.ami.entity;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -42,6 +43,6 @@ public class TestEntity {
 	@Column
 	private String writer;
 
-	@Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-	private Timestamp regDate;
+	@Column
+	private LocalDateTime regDate;
 }

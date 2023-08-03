@@ -12,6 +12,14 @@ axios.defaults.baseURL = 'http://localhost:9000/';
 //     }
 // );
 
+// AxiosInst.interceptors.request.use((config) => {
+//     config.headers.authorization = 'token';
+//     config.headers['Access-Control-Allow-Origin'] = '*'; // CORS 설정(모든 리소스 허용)
+//     return config;
+// });
+
+// export default AxiosInst;
+
 // Add a request interceptor
 axios.interceptors.request.use(
     function (config) {

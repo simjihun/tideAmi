@@ -9,11 +9,19 @@ const model = ref([
         items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' }]
     },
     {
+        label: '실시간 제어',
+        items: [
+            { label: 'FEP', icon: 'pi pi-caret-right', to: '/emul/fep' },
+            { label: 'NMS', icon: 'pi pi-caret-right', to: '/emul/nms' },
+            { label: 'Tab1', icon: 'pi pi-caret-right', to: '/tab1' }
+        ]
+    },
+    {
         label: 'TEST',
         items: [
-          { label: 'Login', icon: 'pi pi-fw pi-home', to: '/login' },
-          { label: 'Board', icon: 'pi pi-fw pi-home', to: '/board/list' },
-          { label: 'TestBoard', icon: 'pi pi-fw pi-pencil', to: '/test/board-list' }
+            { label: 'Login', icon: 'pi pi-fw pi-home', to: '/login' },
+            { label: 'Board', icon: 'pi pi-fw pi-home', to: '/board/list' },
+            { label: 'TestBoard', icon: 'pi pi-fw pi-pencil', to: '/test/board-list' }
         ]
     },
     {
@@ -178,11 +186,11 @@ const model = ref([
             <app-menu-item v-if="!item.separator" :item="item" :index="i"></app-menu-item>
             <li v-if="item.separator" class="menu-separator"></li>
         </template>
-        <li>
+        <!-- <li>
             <a href="https://www.primefaces.org/primeblocks-vue/#/" target="_blank">
                 <img src="/layout/images/banner-primeblocks.png" alt="Prime Blocks" class="w-full mt-3" />
             </a>
-        </li>
+        </li> -->
     </ul>
 </template>
 

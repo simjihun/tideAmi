@@ -11,6 +11,8 @@ module.exports = {
         'vue/multi-word-component-names': 'off',
         'vue/no-reserved-component-names': 'off',
         'vue/no-deprecated-slot-attribute': 'off',
+        '@typescript-eslint/no-empty-interface': 'off',
+        'no-empty-interface': 'off',
         'vue/component-tags-order': [
             'error',
             {

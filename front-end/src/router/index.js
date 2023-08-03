@@ -14,6 +14,26 @@ const router = createRouter({
                     component: () => import('@/views/Dashboard.vue')
                 },
                 {
+                    path: '/emul/fep',
+                    name: 'EmulFep',
+                    component: () => import('@/views/emul/Fep.vue')
+                },
+                {
+                    path: '/emul/nms',
+                    name: 'EmulNms',
+                    component: () => import('@/views/emul/Nms.vue')
+                },
+                {
+                    path: '/tab1',
+                    name: 'tab1',
+                    component: () => import('@/views/emul/tab1.vue')
+                },
+                {
+                    path: '/AddUser',
+                    name: 'AddUser',
+                    component: () => import('@/views/AddUser.vue')
+                },
+                {
                     path: '/board/list',
                     name: 'BoardList',
                     component: () => import('@/views/BoardList.vue')

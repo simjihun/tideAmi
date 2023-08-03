@@ -23,6 +23,7 @@ public class TestController {
 	private static final Logger LOG = LoggerFactory.getLogger(TestController.class);
 
 	private final TestService testService;
+	String[] header= {"글번호", "제목", "내용", "작성자", "등록일"};
 
 	@RequestMapping(value = "board-list.do", method = RequestMethod.GET)
 //	@GetMapping("get-board-list.do")	동일한 코드

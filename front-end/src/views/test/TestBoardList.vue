@@ -37,12 +37,12 @@ export default {
 
 <template>
     <div>
-        <el-table border :data="boardList">
+        <el-table border :data="boardList" :default-sort="{ prop: 'title,content', order: 'descending' }">
             <el-table-column prop="bno" label="글번호"></el-table-column>
-            <el-table-column prop="title" label="제목"></el-table-column>
+            <el-table-column prop="title" label="제목" sortable width="180"></el-table-column>
             <el-table-column prop="content" label="내용"></el-table-column>
             <el-table-column prop="writer" label="작성자"></el-table-column>
-            <el-table-column prop="regDate" label="등록일" :formatter="DateFormat"></el-table-column>
+            <el-table-column prop="regDate" label="등록일" :formatter="DateFormat" sortable width="180"></el-table-column>
         </el-table>
     </div>
 </template>
